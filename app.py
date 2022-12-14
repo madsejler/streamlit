@@ -69,7 +69,7 @@ with tab1:
             model_xgb = pickle.load(open('model_xgb.pkl','rb'))
             scaler = pickle.load(open('scaler.pkl','rb'))
             shap_values = pickle.load(open('shap_values.pkl','rb'))
-            return model_xgb, scaler, ohe, shap_values
+            return model_xgb, scaler, shap_values
 
         model_xgb, scaler, shap_values = read_objects()
 
