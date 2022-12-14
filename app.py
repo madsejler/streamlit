@@ -77,8 +77,6 @@ with tab1:
     with tab2:
         st.title('Will this given costumer say yes?')
 
-        #st.image('https://source.unsplash.com/WgUHuGSWPVM', caption=None, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
-
 
 
         @st.experimental_singleton
@@ -111,15 +109,15 @@ with tab1:
         st.write("Selected Age:", age)
 
         st.subheader("Select the Customer's Jobtype")
-        job = st.radio("", ohe.categories_[0])
-        st.write("Selected Job:", job)
+        squad = st.radio("", ohe.categories_[0])
+        st.write("Selected Squad:", squad)
 
         st.subheader("Select the Customer's Marital")
         marital = st.radio("", ohe.categories_[1])
         st.write("Selected Marital:", marital)
 
         st.subheader("Select the Customer's Education")
-        education = st.radio("", data['education'].unique())
+        education = st.radio("", data['Nation'].unique())
         st.write("Selected Education:", education)
         #Defining a encoding function for education
         def encode_education(selected_item):
