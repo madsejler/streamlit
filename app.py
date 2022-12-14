@@ -29,7 +29,7 @@ with colT2:
 data = pd.read_csv("https://raw.githubusercontent.com/madsejler/streamlit/main/dataEDA.csv", sep=",")
 differences = pd.read_csv("https://raw.githubusercontent.com/madsejler/streamlit/main/differences.csv", sep=",")
 
-tab1, tab2, tab3 = st.tabs(["Data Exploration","Predictor tool SML", "SML Model Comparison"])
+tab1, tab2, tab3 = st.tabs(["Data Exploration","Future Stars", "SML Model Comparison"])
 with tab1:
 
     # dashboard title
@@ -63,7 +63,7 @@ with tab1:
     with tab2:
         st.title('Future Stars 🌟')
         st.markdown("### Detailed Data View")
-        st.dataframe(differences)        
+        st.dataframe(differences.filter(items=['Player Name','Squad', 'Prediction', 'market_value', 'difference', 'difference %']))        
         time.sleep(1)
 
         with tab3:
