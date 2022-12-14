@@ -62,8 +62,10 @@ with tab1:
             time.sleep(1)
     with tab2:
         st.title('Future Stars 🌟')
+            st.markdown("### Detailed Data View")
             st.dataframe(differences)        
-
+            time.sleep(1)
+            
         with tab3:
             st.subheader("SML Model Accuracy")
             st.markdown("On this tab, we will explain why we used the XGB-model, and what parameters we made the decision on")
