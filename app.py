@@ -52,7 +52,7 @@ with tab1:
         # creating metrices 
         avg_value = np.mean(data['market_value']) 
 
-        count_player = int(data[(data["Player Name"].count()))
+        count_player = int(data["Player Name"].count())
         
         with placeholder.container(): 
     # create two columns
