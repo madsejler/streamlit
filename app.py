@@ -29,7 +29,7 @@ with colT2:
 data = pd.read_csv("https://raw.githubusercontent.com/madsejler/streamlit/main/dataEDA.csv", sep=",")
 differences = pd.read_csv("https://raw.githubusercontent.com/madsejler/streamlit/main/differences.csv", sep=",")
 
-tab1, tab2, tab3 = st.tabs(["Data Exploration","Future Stars", "SML Model Comparison"])
+tab1, tab2, tab3 = st.tabs(["Data Exploration","Real Price Information", "SML Model Comparison"])
 with tab1:
 
     # dashboard title
@@ -67,7 +67,18 @@ with tab1:
         differences = differences[differences['Player Name']==player_filter]
         st.dataframe(differences.filter(items=['Player Name','Squad', 'Prediction', 'market_value', 'difference', 'difference %']))        
         time.sleep(1)
-
+        
+        st.markdown("")
+        st.markdown("Statistics")
+        data = data[data['Player Name']==player_filter]
+        st.dataframe(data)        
+        time.sleep(1)
+        # #Printing SHAP explainer
+        # st.subheader(f'Lets explain why the model predicts the output above! See below for SHAP value:')
+        # shap_value = explainer.shap_values(differences)
+        # st_shap(shap.force_plot(explainer.expected_value, shap_value, line_to_pred), height=400, width=900)
+        
+        
         with tab3:
             st.subheader("SML Model Accuracy")
             st.markdown("On this tab, we will explain why we used the XGB-model, and what parameters we made the decision on")
