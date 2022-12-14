@@ -29,7 +29,7 @@ with colT2:
 data = pd.read_csv("https://raw.githubusercontent.com/madsejler/streamlit/main/dataEDA.csv?token=GHSAT0AAAAAAB3W3WRYWM2NEEAXR3L7GSQMY4ZZCJA", sep=";")
 
 
-tab1, tab2, tab3, tab4 = st.tabs(["Data Exploration","Predictor tool SML", "SML Model Comparison", "UML"])
+tab1, tab2, tab3 = st.tabs(["Data Exploration","Predictor tool SML", "SML Model Comparison"])
 with tab1:
 
     # # dashboard title
@@ -78,82 +78,6 @@ with tab1:
         st.title('Will this given costumer say yes?')
 
 
-        @st.experimental_singleton
-        def read_objects():
-            model_xgb = pickle.load(open('model_xgb.pkl','rb'))
-            scaler = pickle.load(open('scaler.pkl','rb'))
-            ohe = pickle.load(open('ohe.pkl','rb'))
-            shap_values = pickle.load(open('shap_values.pkl','rb'))
-            cats = list(itertools.chain(*ohe.categories_))
-            return model_xgb, scaler, ohe, cats, shap_values
-
-        model_xgb, scaler, ohe, cats, shap_values = read_objects()
-
-        #Explainer defined
-        explainer = shap.TreeExplainer(model_xgb)
-
-        with st.expander("What's the purpose of this app?"):
-            st.markdown("""
-            This app will help you determine if you should call a given costumer! 💵 💴 💶 💷
-            It can further help you reconsider your strategic approach to the costumer,
-            in the case that our SML model will predict a "No" from the costumer.
-            """)
-
-        st.title('Costumer description')
-
-        #Below all the bank client's info will be selected
-        # st.subheader("Select the Customer's Age")
-        # age = st.slider("", min_value = 17, max_value = 98, 
-        #                         step = 1, value = 41)
-        # st.write("Selected Age:", age)
-
-        # st.subheader("Select the Customer's Jobtype")
-        # squad = st.radio("", ohe.categories_[0])
-        # st.write("Selected Squad:", squad)
-
-        # st.subheader("Select the Customer's Marital")
-        # marital = st.radio("", ohe.categories_[1])
-        # st.write("Selected Marital:", marital)
-
-        # st.subheader("Select the Customer's Education")
-        # education = st.radio("", data['Nation'].unique())
-        # st.write("Selected Education:", education)
-        # #Defining a encoding function for education
-        # def encode_education(selected_item):
-        #     dict_education = {'basic.4y':1, 'high.school':4, 'basic.6y':2, 'basic.9y':3, 'professional.course':5, 'university.degree':6, 
-        # 'illiterate':0}
-        #     return dict_education.get(selected_item)
-        # ### Using function for encoding on education
-        # education = encode_education(education) 
-
-        # poutcome = st.selectbox('What was the previous outcome for this costumer?', options=ohe.categories_[4])
-        # campaign = st.number_input('How many contacts have you made for this costumer for this campagin already?', min_value=0, max_value=35)
-        # previous = st.number_input('How many times have you contacted this client before?', min_value=0, max_value=35)
-
-        #Button for predicting the costumers answer
-        if st.button('Deposit Prediction 💵'):
-
-            # make a DF for the numericals and standard scale
-            new_df_num = pd.DataFrame({'Gls 90':2, 
-                                    'Shots on Target pr 90': 4}, index=[0])
-            new_values_num = pd.DataFrame(scaler.transform(new_df_num), columns = new_df_num.columns, index=[0])  
-            
-            #Bringing all columns together
-            line_to_pred = new_values_num
-
-            #Run prediction for the new observation. Inputs to this given above
-            predicted_value = model_xgb.predict(line_to_pred)[0]
-            
-            
-            #Printing the result
-            st.metric(label="Predicted answer", value=f'{predicted_value}')
-            st.subheader(f'What does {predicted_value} mean? 1 equals to yes, while 0 equals to no')
-
-            #Printing SHAP explainer
-            st.subheader(f'Lets explain why the model predicts the output above! See below for SHAP value:')
-            shap_value = explainer.shap_values(line_to_pred)
-            st_shap(shap.force_plot(explainer.expected_value, shap_value, line_to_pred), height=400, width=900)
-
         with tab3:
             st.subheader("SML Model Accuracy")
             st.markdown("On this tab, we will explain why we used the XGB-model, and what parameters we made the decision on")
@@ -184,6 +108,3 @@ with tab1:
             st.markdown("""Due to some technical issues with the Logistic regression, we decided to use the XGB Classifier
             for the model anyways, because the LR-model seems to do limited ietrations on the training data. We did not 
             have that problem with the XGB-model, so we went ahead and used the XGB for the prediction model on this webpage """)
-        with tab4:
-            st.markdown("Due to an late error we couldnt make this tab work with the other. Therefore please see this streamlit for tab 4, which is a presentation of our UML")
-            st.markdown("https://madsejler-project-app2-hno3g8.streamlitapp.com/")
