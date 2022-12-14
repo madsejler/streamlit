@@ -1,0 +1,8 @@
+pandas
+shap
+numpy
+matplotlib==3.6.0
+xgboost==1.6.2
+streamlit_shap
+scikit-learn==1.0.2
+plotly
