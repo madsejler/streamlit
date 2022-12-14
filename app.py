@@ -36,9 +36,13 @@ with tab1:
 
     st.title("Data Dashboard")
 
+    job_filter = st.selectbox("Select the Job", pd.unique(data['Competition']))
+
+
     # creating a single-element container.
     placeholder = st.empty()
     # dataframe filter 
+    data = data[data['Competition']==job_filter]
 
     # near real-time / live feed simulation 
     for seconds in range(10):
