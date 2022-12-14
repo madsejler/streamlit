@@ -32,48 +32,36 @@ data = pd.read_csv("https://raw.githubusercontent.com/madsejler/streamlit/main/d
 tab1, tab2, tab3 = st.tabs(["Data Exploration","Predictor tool SML", "SML Model Comparison"])
 with tab1:
 
-    # # dashboard title
+    # dashboard title
 
-    # st.title("Data Dashboard")
+    st.title("Data Dashboard")
 
-    # # top-level filters 
+    # top-level filters 
 
-    # squad_filter = st.selectbox("Select the Squad", pd.unique(data['Squad']))
+    squad_filter = st.selectbox("Select the Squad", pd.unique(data['Squad']))
 
 
-    # # creating a single-element container.
-    # placeholder = st.empty()
-    # # dataframe filter 
-    # data = data[data['Sqaud']==squad_filter]
+    # creating a single-element container.
+    placeholder = st.empty()
+    # dataframe filter 
+    data = data[data['Sqaud']==squad_filter]
 
-    # # near real-time / live feed simulation 
-    # for seconds in range(10):
+    # near real-time / live feed simulation 
+    for seconds in range(10):
+        with placeholder.container(): 
 
-    #     # creating metrices 
-    #     avg_value = np.mean(data['market_value']) 
-
-    #     count_player = int(data["Player Name"].count())
-        
-    #     with placeholder.container(): 
-    # # create two columns
-    #         age, married = st.columns(2)
-
-    #         # fill in those two columns with respective metrics 
-    #         age.metric(label="Average Age ⏳", value=round(avg_age))
-    #         married.metric(label="Married Count 💍", value= int(count_married))
-
-    #         fig_col1, fig_col2 = st.columns(2)
-    #         with fig_col1:
-    #             st.markdown("Age/Marital heatmap")
-    #             fig = px.density_heatmap(data_frame=data, y = 'age', x = 'marital')
-    #             st.write(fig)
-    #         with fig_col2:
-    #             st.markdown("Age distribution")
-    #             fig2 = px.histogram(data_frame = data, x = 'age')
-    #             st.write(fig2)
-    #         st.markdown("### Detailed Data View")
-    #         st.dataframe(data)
-    #         time.sleep(1)
+            fig_col1, fig_col2 = st.columns(2)
+            with fig_col1:
+                st.markdown("Age/Marital heatmap")
+                fig = px.density_heatmap(data_frame=data, y = 'age', x = 'market_value')
+                st.write(fig)
+            with fig_col2:
+                st.markdown("Age distribution")
+                fig2 = px.histogram(data_frame = data, x = 'age')
+                st.write(fig2)
+            st.markdown("### Detailed Data View")
+            st.dataframe(data)
+            time.sleep(1)
     with tab2:
         st.title('Will this given costumer say yes?')
 
