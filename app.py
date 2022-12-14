@@ -16,6 +16,7 @@ import time
 
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
+import requests
 
 ##Streamlit interface:
 st.set_page_config(page_title='Market Values - Prediction',
@@ -25,8 +26,12 @@ st.set_page_config(page_title='Market Values - Prediction',
 colT1,colT2 = st.columns([10,20])
 with colT2:
    st.title('Prediction of real market value 💰')
- 
-data = pd.read_excel("https://github.com/madsejler/streamlit/blob/main/dataEDA.xlsx?raw=true")
+
+url= 'https://gitlab.com/madsejler/streamlit/-/raw/main/dataEDA.xlsx'
+myfile = requests.get(url)
+
+data=pd.read_excel(myfile.content) 
+#data = pd.read_excel("https://github.com/madsejler/streamlit/blob/main/dataEDA.xlsx?raw=true")
 
 
 tab1, tab2, tab3, tab4 = st.tabs(["Data Exploration","Predictor tool SML", "SML Model Comparison", "UML"])
