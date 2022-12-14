@@ -51,7 +51,7 @@ with tab1:
                 st.write(fig)
             with fig_col2:
                 st.markdown("Age distribution")
-                fig2 = px.histogram(data_frame = data, x = 'age')
+                fig2 = px.histogram(data_frame = data, x = 'Age')
                 st.write(fig2)
             st.markdown("### Detailed Data View")
             st.dataframe(data)
