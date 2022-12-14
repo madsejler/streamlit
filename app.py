@@ -68,16 +68,13 @@ with tab1:
         st.dataframe(differences.filter(items=['Player Name','Squad', 'Prediction', 'market_value', 'difference', 'difference %']))        
         time.sleep(1)
         
+        player2_filter = player_filter
         st.markdown("")
         st.markdown("Statistics")
-        data = data[data['Player Name']==player_filter]
+        data = data[data['Player Name']==player_filter2]
         data = data.iloc[:,1:]
         st.dataframe(data)        
         time.sleep(1)
-        # #Printing SHAP explainer
-        # st.subheader(f'Lets explain why the model predicts the output above! See below for SHAP value:')
-        # shap_value = explainer.shap_values(differences)
-        # st_shap(shap.force_plot(explainer.expected_value, shap_value, line_to_pred), height=400, width=900)
         
         
         with tab3:
