@@ -63,9 +63,6 @@ with tab1:
     with tab2:
         st.title('Will this given costumer say yes?')
 
-        #st.image('https://source.unsplash.com/WgUHuGSWPVM', caption=None, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
-
-
 
         @st.experimental_singleton
         def read_objects():
