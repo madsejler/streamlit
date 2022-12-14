@@ -71,6 +71,7 @@ with tab1:
         st.markdown("")
         st.markdown("Statistics")
         data = data[data['Player Name']==player_filter]
+        data = data.iloc[:,1:]
         st.dataframe(data)        
         time.sleep(1)
         # #Printing SHAP explainer
