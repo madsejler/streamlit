@@ -30,7 +30,7 @@ with colT2:
 url= 'https://gitlab.com/madsejler/streamlit/-/raw/main/dataEDA.xlsx'
 myfile = requests.get(url)
 
-data=pd.read_excel(myfile.content) 
+data2=pd.read_excel(myfile.content) 
 #data = pd.read_excel("https://github.com/madsejler/streamlit/blob/main/dataEDA.xlsx?raw=true")
 
 
