@@ -32,35 +32,35 @@ differences = pd.read_csv("https://raw.githubusercontent.com/madsejler/streamlit
 tab1, tab2, tab3 = st.tabs(["Data Exploration","Predictor tool SML", "SML Model Comparison"])
 with tab1:
 
-        # dashboard title
+    # dashboard title
 
-        st.title("Data Dashboard")
+    st.title("Data Dashboard")
 
-        job_filter = st.selectbox("Select the Job", pd.unique(data['Competition']))
+    job_filter = st.selectbox("Select the Job", pd.unique(data['Competition']))
 
 
-        # creating a single-element container.
-        placeholder = st.empty()
-        # dataframe filter 
-        data = data[data['Competition']==job_filter]
+    # creating a single-element container.
+    placeholder = st.empty()
+    # dataframe filter 
+    data = data[data['Competition']==job_filter]
 
-        # near real-time / live feed simulation 
-        for seconds in range(10):
-            with placeholder.container(): 
+    # near real-time / live feed simulation 
+    for seconds in range(10):
+        with placeholder.container(): 
 
-                fig_col1, fig_col2 = st.columns(2)
-                with fig_col1:
-                    st.markdown("Age/MarketValue heatmap")
-                    fig = px.density_heatmap(data_frame=data, y = data['Age'], x = data['market_value'])
-                    st.write(fig)
-                with fig_col2:
-                    st.markdown("Age distribution")
-                    fig2 = px.histogram(data_frame = data, x = data['Age'])
-                    st.write(fig2)
-                st.markdown("### Detailed Data View")
-                st.dataframe(data)
-                time.sleep(1)
-    ith tab2:
+            fig_col1, fig_col2 = st.columns(2)
+            with fig_col1:
+                st.markdown("Age/MarketValue heatmap")
+                fig = px.density_heatmap(data_frame=data, y = data['Age'], x = data['market_value'])
+                st.write(fig)
+            with fig_col2:
+                st.markdown("Age distribution")
+                fig2 = px.histogram(data_frame = data, x = data['Age'])
+                st.write(fig2)
+            st.markdown("### Detailed Data View")
+            st.dataframe(data)
+            time.sleep(1)
+    with tab2:
         st.title('Future Stars 🌟')
         st.markdown("### Detailed Data View")
         st.dataframe(differences)        
