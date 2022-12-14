@@ -61,17 +61,18 @@ with tab1:
             st.dataframe(data)
             time.sleep(1)
     with tab2:
+
+        data2 = pd.concat([data, differences], axis=1)
         st.title('Real price information')
         st.markdown("Real Value vs. Market Value")
-        player_filter = st.selectbox("Select the Player", pd.unique(differences['Player Name']))
-        differences = differences[differences['Player Name']==player_filter]
+        player_filter = st.selectbox("Select the Player", pd.unique(data2['Player Name']))
+        differences = data2[data2['Player Name']==player_filter]
         st.dataframe(differences.filter(items=['Player Name','Squad', 'Prediction', 'market_value', 'difference', 'difference %']))        
         time.sleep(1)
         
-        player2_filter = player_filter
         st.markdown("")
         st.markdown("Statistics")
-        data = data[data['Player Name']==player_filter2]
+        data = data2[data2['Player Name']==player_filter2]
         data = data.iloc[:,1:]
         st.dataframe(data)        
         time.sleep(1)
