@@ -26,10 +26,7 @@ colT1,colT2 = st.columns([10,20])
 with colT2:
    st.title('Prediction of real market value 💰')
 
-data = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
-data = data[data["education"].str.contains("unknown") == False]
-data = data[data["marital"].str.contains("unknown") == False]
-data = data[data["job"].str.contains("unknown") == False]
+data = pd.read_csv("https://raw.githubusercontent.com/madsejler/streamlit/main/dataEDA.csv?token=GHSAT0AAAAAAB3W3WRY4U46I23WNQGK7HUAY4ZXYIQ", sep=";")
 
 
 tab1, tab2, tab3, tab4 = st.tabs(["Data Exploration","Predictor tool SML", "SML Model Comparison", "UML"])
@@ -41,7 +38,7 @@ with tab1:
 
     # top-level filters 
 
-    job_filter = st.selectbox("Select the Job", pd.unique(data['job']))
+    job_filter = st.selectbox("Select the Squad", pd.unique(data['Squad']))
 
 
     # creating a single-element container.
