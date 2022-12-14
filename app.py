@@ -133,17 +133,13 @@ with tab1:
         #Button for predicting the costumers answer
         if st.button('Deposit Prediction 💵'):
 
-            # make a DF for categories and transform with one-hot-encoder
-            new_df_cat = pd.DataFrame({'Competition':"fr Ligue"}, index=[0])
-            new_values_cat = pd.DataFrame(ohe.transform(new_df_cat), columns = cats , index=[0])
-
             # make a DF for the numericals and standard scale
             new_df_num = pd.DataFrame({'Gls 90':2, 
                                     'Shots on Target pr 90': 4}, index=[0])
             new_values_num = pd.DataFrame(scaler.transform(new_df_num), columns = new_df_num.columns, index=[0])  
             
             #Bringing all columns together
-            line_to_pred = pd.concat([new_values_num, new_values_cat], axis=1)
+            line_to_pred = new_values_num
 
             #Run prediction for the new observation. Inputs to this given above
             predicted_value = model_xgb.predict(line_to_pred)[0]
