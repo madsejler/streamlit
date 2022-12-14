@@ -26,7 +26,7 @@ colT1,colT2 = st.columns([10,20])
 with colT2:
    st.title('Prediction of real market value 💰')
 
-data = pd.read_excel(open('dataEDA.xlsx', 'rb')) 
+data = pd.read_excel('dataEDA.xlsx', index_col=0)  
 data = pd.read_excel("https://github.com/madsejler/streamlit/blob/main/dataEDA.xlsx?raw=true")
 
 
