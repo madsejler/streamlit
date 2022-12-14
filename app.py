@@ -36,11 +36,6 @@ with tab1:
 
     st.title("Data Dashboard")
 
-    # top-level filters 
-
-    squad_filter = st.selectbox("Select the Squad", pd.unique(data['Squad']))
-
-
     # creating a single-element container.
     placeholder = st.empty()
     # dataframe filter 
