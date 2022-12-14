@@ -61,7 +61,7 @@ with tab1:
             st.dataframe(data)
             time.sleep(1)
     with tab2:
-        st.title('Future Stars 🌟')
+    st.title('Future Stars 🌟')
         st.markdown("### Detailed Data View")
         st.dataframe(differences)        
         time.sleep(1)
