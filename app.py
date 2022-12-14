@@ -68,12 +68,10 @@ with tab1:
         def read_objects():
             model_xgb = pickle.load(open('model_xgb.pkl','rb'))
             scaler = pickle.load(open('scaler.pkl','rb'))
-            ohe = pickle.load(open('ohe.pkl','rb'))
             shap_values = pickle.load(open('shap_values.pkl','rb'))
-            cats = list(itertools.chain(*ohe.categories_))
-            return model_xgb, scaler, ohe, cats, shap_values
+            return model_xgb, scaler, ohe, shap_values
 
-        model_xgb, scaler, ohe, cats, shap_values = read_objects()
+        model_xgb, scaler, shap_values = read_objects()
 
         #Explainer defined
         explainer = shap.TreeExplainer(model_xgb)
