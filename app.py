@@ -44,7 +44,6 @@ with tab1:
     # creating a single-element container.
     placeholder = st.empty()
     # dataframe filter 
-    data = data[data['Sqaud']==squad_filter]
 
     # near real-time / live feed simulation 
     for seconds in range(10):
