@@ -47,7 +47,7 @@ with tab1:
             fig_col1, fig_col2 = st.columns(2)
             with fig_col1:
                 st.markdown("Age/Marital heatmap")
-                fig = px.density_heatmap(data_frame=data, y = 'age', x = 'market_value')
+                fig = px.density_heatmap(data_frame=data, y = 'Age', x = 'market_value')
                 st.write(fig)
             with fig_col2:
                 st.markdown("Age distribution")
