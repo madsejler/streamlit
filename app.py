@@ -134,7 +134,7 @@ with tab1:
         if st.button('Deposit Prediction 💵'):
 
             # make a DF for categories and transform with one-hot-encoder
-            new_df_cat = pd.DataFrame({'Competition':"LaLiga"}, index=[0])
+            new_df_cat = pd.DataFrame({'Competition':"fr Ligue"}, index=[0])
             new_values_cat = pd.DataFrame(ohe.transform(new_df_cat), columns = cats , index=[0])
 
             # make a DF for the numericals and standard scale
