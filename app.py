@@ -18,13 +18,13 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
 ##Streamlit interface:
-st.set_page_config(page_title='Bank Marketing Project',
-                    page_icon="🐙",
+st.set_page_config(page_title='Market Values - Prediction',
+                    page_icon="💰",
                     layout='wide')
 
 colT1,colT2 = st.columns([10,20])
 with colT2:
-   st.title('Bank Markerting Project 💣💥')
+   st.title('Prediction of real market value 💰')
 
 data = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
 data = data[data["education"].str.contains("unknown") == False]
