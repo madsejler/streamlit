@@ -61,8 +61,8 @@ with tab1:
             st.dataframe(data)
             time.sleep(1)
     with tab2:
-        st.title('Future Stars 🌟')
-        st.markdown("### Detailed Data View")
+        st.title('Real price information')
+        st.markdown("")
         player_filter = st.selectbox("Select the Player", pd.unique(differences['Player Name']))
         differences = differences[differences['Player Name']==player_filter]
         st.dataframe(differences.filter(items=['Player Name','Squad', 'Prediction', 'market_value', 'difference', 'difference %']))        
