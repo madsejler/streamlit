@@ -26,7 +26,7 @@ colT1,colT2 = st.columns([10,20])
 with colT2:
    st.title('Prediction of real market value 💰')
 
-data = pd.read_csv("https://raw.githubusercontent.com/madsejler/streamlit/main/dataEDA.csv?token=GHSAT0AAAAAAB3W3WRY55TZUWJQKD63ZRBUY4ZYIRQ", sep=";")
+data = pd.read_csv("https://raw.githubusercontent.com/madsejler/streamlit/main/dataEDA.csv?token=GHSAT0AAAAAAB3W3WRYWM2NEEAXR3L7GSQMY4ZZCJA", sep=";")
 
 
 tab1, tab2, tab3, tab4 = st.tabs(["Data Exploration","Predictor tool SML", "SML Model Comparison", "UML"])
