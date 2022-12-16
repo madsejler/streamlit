@@ -58,7 +58,7 @@ with tab1:
                 fig2 = px.histogram(data_frame = data, x = data['Age'])
                 st.write(fig2)
             st.markdown("### Detailed Data View")
-            st.dataframe(data)
+            st.dataframe(data.iloc[:,:61])
             time.sleep(1)
     with tab2:
 
