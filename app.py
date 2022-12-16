@@ -69,12 +69,12 @@ with tab1:
         st.dataframe(differences.filter(items=['Player Name','Squad', 'Prediction', 'market_value', 'difference', 'difference %']))        
         time.sleep(1)
         
-        # st.markdown("")
-        # st.markdown("Statistics")
-        # data = data2[data2['Player Name']==player_filter2]
-        # data = data.iloc[:,1:]
-        # st.dataframe(data)        
-        # time.sleep(1)
+        st.markdown("")
+        st.markdown("Statistics")
+        data = data2[data2['Player Name']==player_filter2]
+        data = data.iloc[:,1:]
+        st.dataframe(data)        
+        time.sleep(1)
         
         
         with tab3:
