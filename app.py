@@ -95,7 +95,7 @@ with tab1:
             # model_xgb, scaler, ohe, cats, shap_values = read_objects()
 
             #Explainer defined
-            explainer = shap.TreeExplainer(model_xgb)
+                explainer = shap.TreeExplainer(model_xgb)
 
             with st.expander("What's the purpose of this app?"):
                 st.markdown("""
