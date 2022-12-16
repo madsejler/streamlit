@@ -82,14 +82,14 @@ with tab1:
             st.title('Will this given costumer say yes?')
 
             model_xgb = pickle.load(open('model_xgb.pkl','rb')
-            @st.experimental_singleton
-            def read_objects():
-                model_xgb = pickle.load(open('model_xgb.pkl','rb'))
-                scaler = pickle.load(open('scaler.pkl','rb'))
-                ohe = pickle.load(open('ohe.pkl','rb'))
-                shap_values = pickle.load(open('shap_values.pkl','rb'))
-                cats = list(itertools.chain(*ohe.categories_))
-                return model_xgb, scaler, ohe, cats, shap_values
+        @st.experimental_singleton
+        def read_objects():
+            model_xgb = pickle.load(open('model_xgb.pkl','rb'))
+            scaler = pickle.load(open('scaler.pkl','rb'))
+            ohe = pickle.load(open('ohe.pkl','rb'))
+            shap_values = pickle.load(open('shap_values.pkl','rb'))
+            cats = list(itertools.chain(*ohe.categories_))
+            return model_xgb, scaler, ohe, cats, shap_values
 
         
             # with tab4:
