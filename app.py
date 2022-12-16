@@ -58,7 +58,7 @@ with tab1:
                 fig2 = px.histogram(data_frame = data, x = data['Age'])
                 st.write(fig2)
             st.markdown("### Detailed Data View")
-            st.dataframe(data.iloc[:,:61])
+            st.dataframe(data.iloc[:,1:59])
             time.sleep(1)
     with tab2:
 
@@ -72,7 +72,7 @@ with tab1:
         st.markdown("")
         st.markdown("Statistics")
         data = data[data['Player Name']==player_filter]
-        st.dataframe(data.iloc[:,:61])        
+        st.dataframe(data.iloc[:,1:59])        
         time.sleep(1)
         
         
