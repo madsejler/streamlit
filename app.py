@@ -88,7 +88,7 @@ with tab1:
 
         
         
-                with tab4:
+            with tab4:
                     st.subheader("SML Model Accuracy")
                     st.markdown("On this tab, we will explain why we used the XGB-model, and what parameters we made the decision on")
                     with st.expander("What is the method for comparing the choosing of the three models?"):
