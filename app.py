@@ -82,7 +82,7 @@ with tab1:
             st.title('Will this given costumer say yes?')
 
             model_xgb = pickle.load(open('model_xgb.pkl','rb')
-            time.sleep(1)
+        time.sleep(1)
 
         
             with tab4:
