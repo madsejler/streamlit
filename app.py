@@ -81,7 +81,7 @@ with tab1:
 
             st.title('Will this given costumer say yes?')
 
-                model_xgb = pickle.load(open('model_xgb.pkl','rb')
+            model_xgb = pickle.load(open('model_xgb.pkl','rb')
 
             # @st.experimental_singleton
             # def read_objects():
