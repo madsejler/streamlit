@@ -81,16 +81,18 @@ with tab1:
 
             st.title('Will this given costumer say yes?')
 
-            @st.experimental_singleton
-            def read_objects():
-                model_xgb = pickle.load(open('model_xgb.pkl','rb'))
-                scaler = pickle.load(open('scaler.pkl','rb'))
-                ohe = pickle.load(open('ohe.pkl','rb'))
-                shap_values = pickle.load(open('shap_values.pkl','rb'))
-                cats = list(itertools.chain(*ohe.categories_))
-                return model_xgb, scaler, ohe, cats, shap_values
+                model_xgb = pickle.load(open('model_xgb.pkl','rb')
 
-            model_xgb, scaler, ohe, cats, shap_values = read_objects()
+            # @st.experimental_singleton
+            # def read_objects():
+            #     model_xgb = pickle.load(open('model_xgb.pkl','rb'))
+            #     scaler = pickle.load(open('scaler.pkl','rb'))
+            #     ohe = pickle.load(open('ohe.pkl','rb'))
+            #     shap_values = pickle.load(open('shap_values.pkl','rb'))
+            #     cats = list(itertools.chain(*ohe.categories_))
+            #     return model_xgb, scaler, ohe, cats, shap_values
+
+            # model_xgb, scaler, ohe, cats, shap_values = read_objects()
 
             #Explainer defined
             explainer = shap.TreeExplainer(model_xgb)
