@@ -29,7 +29,7 @@ with colT2:
 data = pd.read_csv("https://raw.githubusercontent.com/madsejler/streamlit/main/dataEDA.csv", sep=";")
 differences = pd.read_csv("https://raw.githubusercontent.com/madsejler/streamlit/main/differences.csv", sep=",")
 
-tab1, tab2, tab3 = st.tabs(["Data Exploration","Real Price Information", "SML Model Comparison"])
+tab1, tab2, tab3 = st.tabs(["Data Exploration","Real Price Information", "Scouting"])
 with tab1:
 
     # dashboard title
@@ -77,8 +77,8 @@ with tab1:
 
         
         with tab3:
-            st.title('Real price information')
-            st.markdown("Real Value vs. Market Value")
+            st.title('Scouting')
+            st.markdown("Find the best player for less money")
             pos_filter = st.selectbox("Select a position", pd.unique(data['Position']))
             data4 = data[data['Position']==pos_filter]
             st.dataframe(data.filter(items=['Player Name','Squad', 'Prediction', 'market_value', 'difference', 'difference %']))        
