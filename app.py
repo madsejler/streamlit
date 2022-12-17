@@ -81,14 +81,15 @@ with tab1:
             st.markdown("Find the best player for less money")
             pos_filter = st.selectbox("Select a position", pd.unique(data['Position']))
             age = st.slider("", min_value = 17, max_value = 40, step = 1, value = 22)
+            goals = st.slider("", min_value = 0.0, max_value = 1.56, step = 0.15, value = 0.80)
             data4 = data[data['Position']==pos_filter]
             data4 = data[data['Age']==age]
+            data¤ = data[data['Gls 90']==goals]
             st.dataframe(data4.filter(items=['Player Name','Squad', 'Prediction', 'market_value', 'difference', 'difference %']))        
             time.sleep(1)
             
             st.markdown("")
             st.markdown("Statistics")
-            #data4 = data4[data4['Position']==pos_filter]
             st.dataframe(data4.iloc[:,1:59])        
             time.sleep(1)
 
