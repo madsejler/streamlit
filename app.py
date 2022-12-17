@@ -83,7 +83,7 @@ with tab1:
             age = st.slider("", min_value = 17, max_value = 40, step = 1, value = 22)
             data4 = data[data['Position']==pos_filter]
             data4 = data[data['Age']==age]
-            st.dataframe(data.filter(items=['Player Name','Squad', 'Prediction', 'market_value', 'difference', 'difference %']))        
+            st.dataframe(data4.filter(items=['Player Name','Squad', 'Prediction', 'market_value', 'difference', 'difference %']))        
             time.sleep(1)
             
             st.markdown("")
