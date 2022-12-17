@@ -83,12 +83,12 @@ with tab1:
             age = st.slider("Age or younger than:", min_value = 17, max_value = 40, step = 1, value = 22)
             goals = st.slider("Goals pr 90 - At least:", min_value = 0.0, max_value = 1.56, step = 0.05, value = 0.00)
             goalsx = st.slider("xGoals pr 90 - At least:", min_value = 0.0, max_value = 1.03, step = 0.025, value = 0.00)
-            aerial = st.slider("Aerial duels won % - At least:", min_value = 0, max_value = 88.6, step = 5, value = 0)
+            #aerial = st.slider("Aerial duels won % - At least:", min_value = 0, max_value = 88.6, step = 5, value = 0)
             data4 = data[data['Position']==pos_filter]
             data4 = data4[data4['Age']<=age]
             data4 = data4[data4['Gls 90']>=goals]
             data4 = data4[data4['xG 90']>=goalsx]
-            data4 = data4[data4['Aerial Duels Won %']>=aerial]
+            #data4 = data4[data4['Aerial Duels Won %']>=aerial]
             st.dataframe(data4.filter(items=['Player Name','Squad', 'Prediction', 'market_value', 'difference', 'difference %']))        
             time.sleep(1)
             
