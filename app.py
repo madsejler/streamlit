@@ -82,7 +82,7 @@ with tab1:
             pos_filter = st.selectbox("Select a position", pd.unique(data['Position']))
             age = st.slider("", min_value = 17, max_value = 40, step = 1, value = 22)
             data4 = data[data['Position']==pos_filter]
-            data4 = data[data['Age']==Age]
+            data4 = data[data['Age']==age]
             st.dataframe(data.filter(items=['Player Name','Squad', 'Prediction', 'market_value', 'difference', 'difference %']))        
             time.sleep(1)
             
