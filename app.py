@@ -88,7 +88,7 @@ with tab1:
             
             st.markdown("")
             st.markdown("Statistics")
-            data4 = data4[data4['Position']==pos_filter]
+            #data4 = data4[data4['Position']==pos_filter]
             st.dataframe(data4.iloc[:,1:59])        
             time.sleep(1)
 
