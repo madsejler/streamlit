@@ -76,34 +76,34 @@ with tab1:
         time.sleep(1)
 
         
-            with tab3:
-                st.subheader("SML Model Accuracy")
-                st.markdown("On this tab, we will explain why we used the XGB-model, and what parameters we made the decision on")
-                with st.expander("What is the method for comparing the choosing of the three models?"):
-                    st.markdown(""" The method for comparing, is done through running the notebook five times 
-                    and chekcing how much the accuracy of the three models each time. We end up with five values
-                    for each model, and then we are comparing the mean, to which model overall performs the best.
-                    There are several random elements in the code, for instance we undersample the data in order
-                    to balance it for SML purposes. The undersample is done randomly and everytime we run the code
-                    the undersample will include different obersvations. Further the train-test split consist of a 
-                    random element. By running the note 5 times we expect the deviation to be under of the accuracy
-                    to be under 5%. Take a look at this page to see the documentation for the values of the 5 runs.
-                    """)
-                st.subheader("Logistic Regression")
-                st.markdown("The five values for this model had a range of 0,78% which a good deal under the 5% 🤓 ")
+        with tab3:
+            st.subheader("SML Model Accuracy")
+            st.markdown("On this tab, we will explain why we used the XGB-model, and what parameters we made the decision on")
+            with st.expander("What is the method for comparing the choosing of the three models?"):
+                st.markdown(""" The method for comparing, is done through running the notebook five times 
+                and chekcing how much the accuracy of the three models each time. We end up with five values
+                for each model, and then we are comparing the mean, to which model overall performs the best.
+                There are several random elements in the code, for instance we undersample the data in order
+                to balance it for SML purposes. The undersample is done randomly and everytime we run the code
+                the undersample will include different obersvations. Further the train-test split consist of a 
+                random element. By running the note 5 times we expect the deviation to be under of the accuracy
+                to be under 5%. Take a look at this page to see the documentation for the values of the 5 runs.
+                """)
+            st.subheader("Logistic Regression")
+            st.markdown("The five values for this model had a range of 0,78% which a good deal under the 5% 🤓 ")
 
-                st.subheader("XGBClassifier")
-                st.markdown("The five values for this model had a range of 2,23% which is also under 5% 🤗 ")
+            st.subheader("XGBClassifier")
+            st.markdown("The five values for this model had a range of 2,23% which is also under 5% 🤗 ")
 
-                st.subheader("RandomForrester")
-                st.markdown("The five values for this model had a range of 1,23% which is also under 5% 🎉 ")
+            st.subheader("RandomForrester")
+            st.markdown("The five values for this model had a range of 1,23% which is also under 5% 🎉 ")
 
-                st.subheader("Ranking of the models by the mean accuracy of the 5 runs")
-                st.markdown("1. **Logistic Regression**: 74,50% 🏆" )
-                st.markdown("2. **XGB Classifier**: 73,44% 🥈" )
-                st.markdown("3. **Random Forest**: 71,30% 🥉" )
+            st.subheader("Ranking of the models by the mean accuracy of the 5 runs")
+            st.markdown("1. **Logistic Regression**: 74,50% 🏆" )
+            st.markdown("2. **XGB Classifier**: 73,44% 🥈" )
+            st.markdown("3. **Random Forest**: 71,30% 🥉" )
 
-                st.markdown("""Due to some technical issues with the Logistic regression, we decided to use the XGB Classifier
-                for the model anyways, because the LR-model seems to do limited ietrations on the training data. We did not 
-                have that problem with the XGB-model, so we went ahead and used the XGB for the prediction model on this webpage """)
+            st.markdown("""Due to some technical issues with the Logistic regression, we decided to use the XGB Classifier
+            for the model anyways, because the LR-model seems to do limited ietrations on the training data. We did not 
+            have that problem with the XGB-model, so we went ahead and used the XGB for the prediction model on this webpage """)
                 
