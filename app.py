@@ -83,7 +83,7 @@ with tab1:
             age = st.slider("", min_value = 17, max_value = 40, step = 1, value = 22)
             goals = st.slider("", min_value = 0.0, max_value = 1.56, step = 0.15, value = 0.00)
             data4 = data[data['Position']==pos_filter]
-            data4 = data[data['Age']<age]
+            data4 = data[data['Age']==age]
             data4 = data[data['Gls 90']==goals]
             st.dataframe(data4.filter(items=['Player Name','Squad', 'Prediction', 'market_value', 'difference', 'difference %']))        
             time.sleep(1)
