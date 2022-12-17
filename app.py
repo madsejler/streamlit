@@ -42,7 +42,7 @@ with tab1:
     # creating a single-element container.
     placeholder = st.empty()
     # dataframe filter 
-    data = data[data['Competition']==job_filter]
+    data2 = data[data['Competition']==job_filter]
 
     # near real-time / live feed simulation 
     for seconds in range(10):
@@ -51,14 +51,14 @@ with tab1:
             fig_col1, fig_col2 = st.columns(2)
             with fig_col1:
                 st.markdown("Age/MarketValue heatmap")
-                fig = px.density_heatmap(data_frame=data, y = data['Age'], x = data['market_value'])
+                fig = px.density_heatmap(data_frame=data2, y = data2['Age'], x = data2['market_value'])
                 st.write(fig)
             with fig_col2:
                 st.markdown("Age distribution")
-                fig2 = px.histogram(data_frame = data, x = data['Age'])
+                fig2 = px.histogram(data_frame = data2, x = data2['Age'])
                 st.write(fig2)
             st.markdown("### Detailed Data View")
-            st.dataframe(data.iloc[:,1:59])
+            st.dataframe(data2.iloc[:,1:59])
             time.sleep(1)
     with tab2:
 
