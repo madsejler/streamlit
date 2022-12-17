@@ -80,7 +80,9 @@ with tab1:
             st.title('Scouting')
             st.markdown("Find the best player for less money")
             pos_filter = st.selectbox("Select a position", pd.unique(data['Position']))
+            age = st.slider("", min_value = 17, max_value = 40, step = 1, value = 22)
             data4 = data[data['Position']==pos_filter]
+            data4 = data[data['Age']==Age]
             st.dataframe(data.filter(items=['Player Name','Squad', 'Prediction', 'market_value', 'difference', 'difference %']))        
             time.sleep(1)
             
