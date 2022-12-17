@@ -29,7 +29,7 @@ with colT2:
 data = pd.read_csv("https://raw.githubusercontent.com/madsejler/streamlit/main/dataEDA.csv", sep=";")
 differences = pd.read_csv("https://raw.githubusercontent.com/madsejler/streamlit/main/differences.csv", sep=",")
 
-tab1, tab2, tab3, tab4 = st.tabs(["Data Exploration","Real Price Information", "Predict", "SML Model Comparison"])
+tab1, tab2, tab3 = st.tabs(["Data Exploration","Real Price Information", "SML Model Comparison"])
 with tab1:
 
     # dashboard title
@@ -74,15 +74,9 @@ with tab1:
         data = data[data['Player Name']==player_filter]
         st.dataframe(data.iloc[:,1:59])        
         time.sleep(1)
-        
-        with tab3:
-            st.subheader("Predict")
-            st.markdown("")
-
-            st.title('Will this given costumer say yes?')
 
         
-            with tab4:
+            with tab3:
                 st.subheader("SML Model Accuracy")
                 st.markdown("On this tab, we will explain why we used the XGB-model, and what parameters we made the decision on")
                 with st.expander("What is the method for comparing the choosing of the three models?"):
