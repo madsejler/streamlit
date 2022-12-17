@@ -65,14 +65,14 @@ with tab1:
         st.title('Real price information')
         st.markdown("Real Value vs. Market Value")
         player_filter = st.selectbox("Select the Player", pd.unique(data['Player Name']))
-        data = data[data['Player Name']==player_filter]
+        data3 = data[data['Player Name']==player_filter]
         st.dataframe(data.filter(items=['Player Name','Squad', 'Prediction', 'market_value', 'difference', 'difference %']))        
         time.sleep(1)
         
         st.markdown("")
         st.markdown("Statistics")
-        data = data[data['Player Name']==player_filter]
-        st.dataframe(data.iloc[:,1:59])        
+        data3 = data3[data3['Player Name']==player_filter]
+        st.dataframe(data3.iloc[:,1:59])        
         time.sleep(1)
 
         
@@ -80,14 +80,14 @@ with tab1:
             st.title('Real price information')
             st.markdown("Real Value vs. Market Value")
             pos_filter = st.selectbox("Select a position", pd.unique(data['Position']))
-            data = data[data['Position']==pos_filter]
+            data4 = data[data['Position']==pos_filter]
             st.dataframe(data.filter(items=['Player Name','Squad', 'Prediction', 'market_value', 'difference', 'difference %']))        
             time.sleep(1)
             
             st.markdown("")
             st.markdown("Statistics")
-            data = data[data['Position']==pos_filter]
-            st.dataframe(data.iloc[:,1:59])        
+            data4 = data4[data4['Position']==pos_filter]
+            st.dataframe(data4.iloc[:,1:59])        
             time.sleep(1)
 
 
