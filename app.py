@@ -5,7 +5,7 @@ import pickle # un-pickling stuff from training notebook
 from xgboost import XGBRegressor # we use a trained XGBoost model...and therefore need to load it
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import LabelEncoder
-import shap # add prediction explainability
+#import shap # add prediction explainability
 
 import numpy as np
 import itertools # we need that to flatten ohe.categories_ into one list for columns
