@@ -36,7 +36,7 @@ with tab1:
 
     st.title("Data Dashboard")
 
-    job_filter = st.selectbox("Select the Job", pd.unique(data['Competition']))
+    job_filter = st.selectbox("Select the League", pd.unique(data['Competition']))
 
 
     # creating a single-element container.
